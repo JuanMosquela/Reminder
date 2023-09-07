@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { currentUser } from "@clerk/nextjs";
-import { wait } from "@/lib/wait";
 import { Suspense } from "react";
 import CollectionItems from "@/components/CollectionItems";
 
@@ -23,7 +21,6 @@ const WelcomeMessageFallback = () => {
 
 const WelcomeMessage = async () => {
   const user = await currentUser();
-  await wait(3000);
 
   if (!user) {
     return <div>No User Found</div>;
