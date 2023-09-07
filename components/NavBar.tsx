@@ -1,0 +1,24 @@
+import React from "react";
+import { UserButton } from "@clerk/nextjs";
+import Logo from "./Logo";
+import ThemeSwitcher from "./ThemeSwitcher";
+
+const NavBar = () => {
+  return (
+    <nav
+      className="
+        flex
+        w-full 
+        items-center
+        justify-between first-letter:p-4 px-8 h-[60px]"
+    >
+      <Logo />
+      <div className="flex gap-4 items-center">
+        <UserButton afterSignOutUrl="/" />
+        <ThemeSwitcher />
+      </div>
+    </nav>
+  );
+};
+
+export default NavBar;
